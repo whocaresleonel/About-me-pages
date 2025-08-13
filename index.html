@@ -16,6 +16,8 @@
       --accent-2: #8b5cf6;
       --card: #0f141c;
       --border: #1c2633;
+      /* black wave svg (800x220) */
+      --wave-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220' preserveAspectRatio='none'><path fill='%23000' d='M0 120 C 50 80 150 160 200 120 S 350 80 400 120 S 550 160 600 120 S 750 80 800 120 V220 H0 Z'/></svg>");
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
@@ -27,9 +29,55 @@
                   radial-gradient(1000px 600px at -10% 10%, rgba(106,176,255,.12), transparent 40%),
                   var(--bg);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+    /* Taller waves background */
+    .waves {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .wave {
+      position: absolute;
+      left: -6%;
+      right: -6%;
+      height: 340px; /* was 220px */
+      bottom: -60px; /* was -48px */
+      background-image: var(--wave-url);
+      background-repeat: repeat-x;
+      background-size: 800px 340px; /* was 800x220 */
+      will-change: background-position, transform;
+      animation: waveMove 18s linear infinite, swell 6s ease-in-out infinite;
+      filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
+    }
+    .wave.wave1 { opacity: .16; bottom: -60px; animation-duration: 24s, 7s; }
+    .wave.wave2 {
+      opacity: .22;
+      bottom: -72px; /* deeper */
+      animation-duration: 18s, 6s;
+      animation-direction: reverse, normal;
+      background-size: 900px 380px; /* was 900x240 */
+    }
+    .wave.wave3 {
+      opacity: .28;
+      bottom: -84px; /* deepest */
+      animation-duration: 12s, 5s;
+      background-size: 1000px 420px; /* was 1000x260 */
+    }
+
+    @keyframes waveMove {
+      from { background-position-x: 0; }
+      to   { background-position-x: 800px; }
+    }
+    @keyframes swell {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; position: relative; z-index: 1; }
     header {
       position: sticky; top: 0; z-index: 20;
       background: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.75));
@@ -65,6 +113,13 @@
   </style>
 </head>
 <body>
+  <!-- animated black waves background -->
+  <div class="waves" aria-hidden="true">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+
   <header>
     <div class="container nav">
       <a class="logo" href="#top">Leonel Hirmiz</a>
@@ -81,9 +136,9 @@
         <h1 class="title">Hi, I'm Leonel Hirmiz.</h1>
         <p class="subtitle">I'm a 13‑year‑old who does nothing other then building on the web. I write absolute garbage with <strong>HTML</strong> and <strong>CSS</strong>, and I run two of the most underated game hubs.</p>
         <div class="chips">
-          <span class="chip">Dark‑mode enjoyer</span>
-          <span class="chip">Student & maker</span>
-          <span class="chip">Based on the web </span>
+          <span class="chip">I can do what I want whenever I want</span>
+          <span class="chip">professional light mode hater</span>
+          <span class="chip">Based on the one coca cola that i have sometimes </span>
         </div>
       </div>
     </section>
