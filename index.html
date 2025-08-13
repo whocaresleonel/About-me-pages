@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leonel Hirmiz — About Me</title>
+  <meta name="description" content="About Leonel Hirmiz — a 13-year-old who builds on the web. Skills, projects, and ways to get in touch." />
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-elev: #111823;
+      --text: #e7eef7;
+      --muted: #a0b3c7;
+      --accent: #6ab0ff;
+      --accent-2: #8b5cf6;
+      --card: #0f141c;
+      --border: #1c2633;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(138,92,246,.12), transparent 40%),
+                  radial-gradient(1000px 600px at -10% 10%, rgba(106,176,255,.12), transparent 40%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.75));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .nav a.logo { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav .links { display: flex; gap: 12px; }
+    .btn-link { color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 10px; border: 1px solid transparent; }
+    .btn-link:hover { color: var(--text); border-color: var(--border); background: rgba(255,255,255,.03); }
+
+    .hero { display: grid; gap: 20px; padding: 40px 0 20px; }
+    .title { font-size: clamp(28px, 6vw, 48px); margin: 0; }
+    .subtitle { color: var(--muted); margin: 6px 0 0; font-size: clamp(14px, 2.6vw, 18px); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .chip { border: 1px solid var(--border); background: rgba(255,255,255,.03); padding: 6px 10px; border-radius: 999px; font-size: 12px; color: var(--muted); }
+
+    section { padding: 34px 0; }
+    .section-title { font-size: 20px; margin: 0 0 16px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+    .card { background: rgba(17,24,35,.7); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    a { color: var(--accent); }
+    a:hover { text-decoration: underline; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: rgba(106,176,255,.08); color: var(--text); text-decoration: none; }
+    .button.secondary { background: rgba(139,92,246,.08); }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); padding: 18px 0 36px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">Leonel Hirmiz</a>
+      <nav class="links">
+        <a class="btn-link" href="#skills">Skills</a>
+        <a class="btn-link" href="#projects">What I Own</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <h1 class="title">Hi, I'm Leonel Hirmiz.</h1>
+        <p class="subtitle">I'm a 13‑year‑old who does nothing other then building on the web. I write absolute garbage<strong>HTML</strong> and <strong>CSS</strong>, and I run two of the most underated game hubs.</p>
+        <div class="chips">
+          <span class="chip">Dark‑mode enjoyer</span>
+          <span class="chip">Student & maker</span>
+          <span class="chip">Based on the web </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>HTML</h3>
+          <p>Semantic elements, accessible structure, tidy markup.</p>
+        </article>
+        <article class="card">
+          <h3>CSS</h3>
+          <p>Responsive layouts, cards and buttons, modern dark themes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">What I Own</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Whocaresleonel game hub</h3>
+          <p class="muted">A collection of web games I host for fun and "educational stuff totally"</p>
+          <a class="button" href="https://whocaresleonel.github.io" target="_blank">Visit whocaresleonel.github.io ↗</a>
+        </article>
+        <article class="card">
+          <h3>Schoolsucks game hub</h3>
+          <p class="muted">i own this as a secondary game hub </p>
+          <a class="button secondary" href="https://schoolsucks.space" target="_blank">Visit schoolsucks.space ↗</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="y"></span> Leonel Hirmiz. Built with what ever the hell works.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
