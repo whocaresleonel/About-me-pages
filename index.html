@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonel Hirmiz — About Me</title>
-  <meta name="description" content="About Leonel Hirmiz — a 13-year-old who builds on the web avoids going outside" />
+  <meta name="description" content="About Leonel Hirmiz — everything about me in one place" />
   <meta name="theme-color" content="#0b0f14" />
   <style>
     :root {
@@ -16,7 +16,6 @@
       --accent-2: #8b5cf6;
       --card: #0f141c;
       --border: #1c2633;
-      /* black wave svg (800x220) */
       --wave-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220' preserveAspectRatio='none'><path fill='%23000' d='M0 120 C 50 80 150 160 200 120 S 350 80 400 120 S 550 160 600 120 S 750 80 800 120 V220 H0 Z'/></svg>");
     }
     * { box-sizing: border-box; }
@@ -31,52 +30,21 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
-    /* Taller waves background */
-    .waves {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
+    .waves { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
     .wave {
-      position: absolute;
-      left: -6%;
-      right: -6%;
-      height: 340px; /* was 220px */
-      bottom: -60px; /* was -48px */
+      position: absolute; left: -6%; right: -6%; height: 340px; bottom: -60px;
       background-image: var(--wave-url);
       background-repeat: repeat-x;
-      background-size: 800px 340px; /* was 800x220 */
+      background-size: 800px 340px;
       will-change: background-position, transform;
       animation: waveMove 18s linear infinite, swell 6s ease-in-out infinite;
       filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
     }
     .wave.wave1 { opacity: .16; bottom: -60px; animation-duration: 24s, 7s; }
-    .wave.wave2 {
-      opacity: .22;
-      bottom: -72px; /* deeper */
-      animation-duration: 18s, 6s;
-      animation-direction: reverse, normal;
-      background-size: 900px 380px; /* was 900x240 */
-    }
-    .wave.wave3 {
-      opacity: .28;
-      bottom: -84px; /* deepest */
-      animation-duration: 12s, 5s;
-      background-size: 1000px 420px; /* was 1000x260 */
-    }
-
-    @keyframes waveMove {
-      from { background-position-x: 0; }
-      to   { background-position-x: 800px; }
-    }
-    @keyframes swell {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
-
+    .wave.wave2 { opacity: .22; bottom: -72px; animation-duration: 18s, 6s; animation-direction: reverse, normal; background-size: 900px 380px; }
+    .wave.wave3 { opacity: .28; bottom: -84px; animation-duration: 12s, 5s; background-size: 1000px 420px; }
+    @keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 800px; } }
+    @keyframes swell { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
     .container { max-width: 1000px; margin: 0 auto; padding: 24px; position: relative; z-index: 1; }
     header {
       position: sticky; top: 0; z-index: 20;
@@ -89,97 +57,79 @@
     .nav .links { display: flex; gap: 12px; }
     .btn-link { color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 10px; border: 1px solid transparent; }
     .btn-link:hover { color: var(--text); border-color: var(--border); background: rgba(255,255,255,.03); }
-
     .hero { display: grid; gap: 20px; padding: 40px 0 20px; }
     .title { font-size: clamp(28px, 6vw, 48px); margin: 0; }
     .subtitle { color: var(--muted); margin: 6px 0 0; font-size: clamp(14px, 2.6vw, 18px); }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
     .chip { border: 1px solid var(--border); background: rgba(255,255,255,.03); padding: 6px 10px; border-radius: 999px; font-size: 12px; color: var(--muted); }
-
     section { padding: 34px 0; }
     .section-title { font-size: 20px; margin: 0 0 16px; }
     .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-
     .card { background: rgba(17,24,35,.7); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
     .card h3 { margin: 0 0 8px; font-size: 18px; }
     .card p { margin: 0; color: var(--muted); }
-
-    a { color: var(--accent); }
-    a:hover { text-decoration: underline; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: rgba(106,176,255,.08); color: var(--text); text-decoration: none; }
-    .button.secondary { background: rgba(139,92,246,.08); }
-
     footer { border-top: 1px solid var(--border); color: var(--muted); padding: 18px 0 36px; }
   </style>
 </head>
 <body>
-  <!-- animated black waves background -->
   <div class="waves" aria-hidden="true">
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
     <div class="wave wave3"></div>
   </div>
-
   <header>
     <div class="container nav">
       <a class="logo" href="#top">Leonel Hirmiz</a>
       <nav class="links">
-        <a class="btn-link" href="#skills">Skills</a>
-        <a class="btn-link" href="#projects">What I Own</a>
+        <a class="btn-link" href="#about">About</a>
+        <a class="btn-link" href="#tech">Tech</a>
       </nav>
     </div>
   </header>
-
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <h1 class="title">Hi, I'm Leonel Hirmiz.</h1>
-        <p class="subtitle">I'm a 13‑year‑old who does nothing other then building on the web. I write absolute garbage with <strong>HTML</strong> and <strong>CSS</strong>, and I run two of the most underated game hubs.</p>
+        <h1 class="title">Hi im Leonel</h1>
+        <p class="subtitle">im 13 and thats all tbh</p>
         <div class="chips">
-          <span class="chip">I can do what I want whenever I want</span>
-          <span class="chip">professional light mode hater</span>
-          <span class="chip">Based on the one coca cola that i have sometimes </span>
+          <span class="chip">dark mode forever</span>
+          <span class="chip">hate light mode fr</span>
+          <span class="chip">one coke and im set</span>
         </div>
       </div>
     </section>
-
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
+    <section id="about">
+      <h2 class="section-title">About me</h2>
       <div class="card-grid">
         <article class="card">
-          <h3>HTML</h3>
-          <p>Semantic elements, accessible structure, tidy markup.</p>
-        </article>
-        <article class="card">
-          <h3>CSS</h3>
-          <p>Responsive layouts, cards and buttons, modern dark themes.</p>
+          <h3>just me</h3>
+          <p>i live in aus victoria im 13 like tech and all that i am banned from going outside why i dont know</p>
         </article>
       </div>
     </section>
-
-    <section id="projects">
-      <h2 class="section-title">What I Own</h2>
+    <section id="tech">
+      <h2 class="section-title">my tech stuff </h2>
       <div class="card-grid">
         <article class="card">
-          <h3>Whocaresleonel game hub</h3>
-          <p class="muted">A collection of web games I host for fun and "educational stuff totally"</p>
-          <a class="button" href="https://whocaresleonel.github.io" target="_blank">Visit whocaresleonel.github.io ↗</a>
+          <h3>what i do</h3>
+          <p>chatgpt servers are down right now i will check later</p>
         </article>
         <article class="card">
-          <h3>Schoolsucks game hub</h3>
-          <p class="muted">i own this as a secondary game hub </p>
-          <a class="button secondary" href="https://schoolsucks.space" target="_blank">Visit schoolsucks.space ↗</a>
+          <h3>Coding skills on fonem</h3>
+          <p>coding languages i know</p>
+        </article>
+        <article class="card">
+          <h3>phone</h3>
+          <p>samsung galaxy a14 5g its ok</p>
         </article>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container">
-      <small>© <span id="y"></span> Leonel Hirmiz. Built with what ever the hell works.</small>
+      <small>© <span id="y"></span> Leonel idk what else to put</small>
     </div>
   </footer>
-
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
