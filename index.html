@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leonel Hirmiz — About Me</title>
-  <meta name="description" content="About Leonel Hirmiz — a 13-year-old who builds on the web avoids going outside" />
+  <meta name="description" content="About Leonel Hirmiz — a 13-year-old web builder who loves games and fun stuff." />
   <meta name="theme-color" content="#0b0f14" />
   <style>
     :root {
@@ -16,7 +16,6 @@
       --accent-2: #8b5cf6;
       --card: #0f141c;
       --border: #1c2633;
-      /* black wave svg (800x220) */
       --wave-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220' preserveAspectRatio='none'><path fill='%23000' d='M0 120 C 50 80 150 160 200 120 S 350 80 400 120 S 550 160 600 120 S 750 80 800 120 V220 H0 Z'/></svg>");
     }
     * { box-sizing: border-box; }
@@ -31,8 +30,6 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
-    /* Taller waves background */
     .waves {
       position: fixed;
       inset: 0;
@@ -44,46 +41,22 @@
       position: absolute;
       left: -6%;
       right: -6%;
-      height: 340px; /* was 220px */
-      bottom: -60px; /* was -48px */
+      height: 340px;
+      bottom: -60px;
       background-image: var(--wave-url);
       background-repeat: repeat-x;
-      background-size: 800px 340px; /* was 800x220 */
-      will-change: background-position, transform;
+      background-size: 800px 340px;
       animation: waveMove 18s linear infinite, swell 6s ease-in-out infinite;
       filter: drop-shadow(0 -1px 0 rgba(0,0,0,0.5));
     }
     .wave.wave1 { opacity: .16; bottom: -60px; animation-duration: 24s, 7s; }
-    .wave.wave2 {
-      opacity: .22;
-      bottom: -72px; /* deeper */
-      animation-duration: 18s, 6s;
-      animation-direction: reverse, normal;
-      background-size: 900px 380px; /* was 900x240 */
-    }
-    .wave.wave3 {
-      opacity: .28;
-      bottom: -84px; /* deepest */
-      animation-duration: 12s, 5s;
-      background-size: 1000px 420px; /* was 1000x260 */
-    }
-
-    @keyframes waveMove {
-      from { background-position-x: 0; }
-      to   { background-position-x: 800px; }
-    }
-    @keyframes swell {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
+    .wave.wave2 { opacity: .22; bottom: -72px; animation-duration: 18s, 6s; animation-direction: reverse, normal; background-size: 900px 380px; }
+    .wave.wave3 { opacity: .28; bottom: -84px; animation-duration: 12s, 5s; background-size: 1000px 420px; }
+    @keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 800px; } }
+    @keyframes swell { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
     .container { max-width: 1000px; margin: 0 auto; padding: 24px; position: relative; z-index: 1; }
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.75));
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
+    header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.75)); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
     .nav a.logo { font-weight: 800; text-decoration: none; color: var(--text); }
     .nav .links { display: flex; gap: 12px; }
@@ -110,10 +83,28 @@
     .button.secondary { background: rgba(139,92,246,.08); }
 
     footer { border-top: 1px solid var(--border); color: var(--muted); padding: 18px 0 36px; }
+    .social { margin-top: 12px; }
+    .tiktok-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      background: #ff0050;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .tiktok-link:hover {
+      background: #b20038;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <!-- animated black waves background -->
   <div class="waves" aria-hidden="true">
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
@@ -133,12 +124,18 @@
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <h1 class="title">Hi, I'm Leonel Hirmiz.</h1>
-        <p class="subtitle">I'm a 13‑year‑old who does nothing other then building on the web. I write absolute garbage with <strong>HTML</strong> and <strong>CSS</strong>, and I run two of the most underated game hubs.</p>
+        <h1 class="title">Hey, I'm Leonel Hirmiz</h1>
+        <h2 class="tagline">my hobby started after when i got my first tablet and learnt how to pirate minecraft🤑😂</h2>
+        <p class="subtitle">I'm 13 and I code websites for a living</p>
         <div class="chips">
-          <span class="chip">I can do what I want whenever I want</span>
-          <span class="chip">professional light mode hater</span>
-          <span class="chip">Based on the one coca cola that i have sometimes </span>
+          <span class="chip">I have a hobby of updating once in a while</span>
+          <span class="chip">Parents are from iraq i was born in australia</span>
+          <span class="chip">Usually inactive</span>
+        </div>
+        <div class="social">
+          <a class="tiktok-link" href="https://www.tiktok.com/@itsleonelofficial" target="_blank">
+            <img src="https://img.freepik.com/premium-vector/tik-tok-glitch-icon-social-media-tik-tok-icon-vinnitsa-ukraine-february-22-02-2023_250246-536.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" style="height:1em;"> @itsleonelofficial
+          </a>
         </div>
       </div>
     </section>
@@ -148,11 +145,15 @@
       <div class="card-grid">
         <article class="card">
           <h3>HTML</h3>
-          <p>Semantic elements, accessible structure, tidy markup.</p>
+          <p>Making websites that are ment for "educational intentions" </p>
         </article>
         <article class="card">
           <h3>CSS</h3>
-          <p>Responsive layouts, cards and buttons, modern dark themes.</p>
+          <p>i useully make buttons and backgrounds</p>
+        </article>
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Adding fun stuff and making things move.</p>
         </article>
       </div>
     </section>
@@ -161,13 +162,13 @@
       <h2 class="section-title">What I Own</h2>
       <div class="card-grid">
         <article class="card">
-          <h3>Whocaresleonel game hub</h3>
-          <p class="muted">A collection of web games I host for fun and "educational stuff totally"</p>
+          <h3>Leonels Game Hub</h3>
+          <p class="muted">I host for fun and with "education Intentions" in mind.</p>
           <a class="button" href="https://whocaresleonel.github.io" target="_blank">Visit whocaresleonel.github.io ↗</a>
         </article>
         <article class="card">
-          <h3>Schoolsucks game hub</h3>
-          <p class="muted">i own this as a secondary game hub </p>
+          <h3>Leonels Game Hub mirror</h3>
+          <p class="muted">This is my alternative learn hub, a mirror of leonels Game Hub.</p>
           <a class="button secondary" href="https://schoolsucks.space" target="_blank">Visit schoolsucks.space ↗</a>
         </article>
       </div>
@@ -176,7 +177,7 @@
 
   <footer>
     <div class="container">
-      <small>© <span id="y"></span> Leonel Hirmiz. Built with what ever the hell works.</small>
+      <small>© <span id="y">2025</span> Leonel Find me on TikTok <a class="tiktok-link" href="https://www.tiktok.com/@itsleonelofficial" target="_blank">@itsleonelofficial</a></small>
     </div>
   </footer>
 
